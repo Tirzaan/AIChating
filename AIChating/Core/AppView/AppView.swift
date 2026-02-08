@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AppView: View {
-    @AppStorage("showTabbarView") var showTabbar: Bool = false
+    @State var appState = AppState()
     
     var body: some View {
         AppViewBuilder(
-            showTabbar: showTabbar,
+            showTabbar: appState.showTabbar,
             tabbarView: {
                 TabbarView()
             },
@@ -20,13 +20,14 @@ struct AppView: View {
                 WelcomeView()
             }
         )
+        .environment(appState)
     }
 }
 
 #Preview("Tabbar") {
-    AppView(showTabbar: true)
+    AppView(appState: AppState(showTabbar: true))
 }
 
 #Preview("Onboarding") {
-    AppView(showTabbar: false)
+    AppView(appState: AppState(showTabbar: false))
 }

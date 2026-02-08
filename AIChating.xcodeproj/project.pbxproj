@@ -235,6 +235,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		99EB463F2F345A07004C8191 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

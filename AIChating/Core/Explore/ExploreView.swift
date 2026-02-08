@@ -10,8 +10,8 @@ import SwiftUI
 struct ExploreView: View {
     var body: some View {
         NavigationStack {
-            Text("Hello, World!")
-                .navigationTitle("Chats")
+            Text("Explore")
+                .navigationTitle("Explore")
         }
     }
 }
