@@ -22,4 +22,8 @@ extension View {
             .background(.accent)
             .rounded(16)
     }
+    
+    func tappableBackground() -> some View {
+        background(.black.opacity(0.001))
+    }
 }
