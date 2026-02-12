@@ -23,7 +23,7 @@ struct OnboardingColorView: View {
             content: {
                 ZStack {
                     if let selectedColor {
-                        continueButton
+                        continueButton(selectedColor: selectedColor)
                         .transition(AnyTransition(.move(edge: .bottom)))
                     }
                 }
@@ -31,6 +31,7 @@ struct OnboardingColorView: View {
                 .background(selectedColor != nil ? Color(UIColor.systemBackground) : .clear)
             })
         .animation(.spring, value: selectedColor)
+        .toolbar(.hidden, for: .navigationBar)
     }
     
     private var colorGrid: some View {
@@ -62,9 +63,9 @@ struct OnboardingColorView: View {
         )
     }
     
-    private var continueButton: some View {
+    private func continueButton(selectedColor: Color) -> some View {
         NavigationLink {
-            OnboardingCompletedView()
+            OnboardingCompletedView(selectedColor: selectedColor)
         } label: {
             Text("Continue")
                 .callToActionButton()
@@ -76,4 +77,5 @@ struct OnboardingColorView: View {
     NavigationStack {
         OnboardingColorView()
     }
+    .environment(AppState())
 }
