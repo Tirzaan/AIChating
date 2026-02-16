@@ -8,7 +8,8 @@
 import Foundation
 
 struct Constants {
-    static let mockImage = "https://picsum.photos/600"
+    static let image = "https://picsum.photos/600"
     static let privacyPolicyUrl = URL(string: "https://www.apple.com")
     static let termsOfServiceUrl = URL(string: "https://www.apple.com")
+    static let mockTitle = "This Is A Mock Title for"
 }

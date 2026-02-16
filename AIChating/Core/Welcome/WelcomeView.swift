@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State var imageName: String = Constants.mockImage
+    @State var imageName: String = Constants.image
     
     var body: some View {
         NavigationStack {

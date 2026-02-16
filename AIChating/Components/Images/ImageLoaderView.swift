@@ -12,7 +12,7 @@ struct ImageLoaderView: View {
     var urlString: String
     var resizingMode: ContentMode
     
-    init(_ urlString: String = Constants.mockImage, resizingMode: ContentMode = .fill) {
+    init(_ urlString: String = Constants.image, resizingMode: ContentMode = .fill) {
         self.urlString = urlString
         self.resizingMode = resizingMode
     }
