@@ -36,16 +36,7 @@ struct HeroCell: View {
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(16)
-            .background {
-                LinearGradient(
-                    colors: [
-                        .black.opacity(0),
-                        .black.opacity(0.3)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            }
+            .withBlackGradientBackground()
         }
         .rounded(16)
     }

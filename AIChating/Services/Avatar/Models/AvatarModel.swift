@@ -120,7 +120,7 @@ struct AvatarDesriptionBuilder {
     }
 }
 
-enum CharacterOption: String {
+enum CharacterOption: String, CaseIterable {
     case man
     case woman
     case alien
