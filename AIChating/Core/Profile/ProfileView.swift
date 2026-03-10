@@ -28,7 +28,7 @@ struct ProfileView: View {
     private var settingsButton: some View {
         Image(systemName: "gear")
             .font(.headline)
-            .onTapGesture {
+            .asButton(.tap) {
                 toggleShowSettingsView()
             }
     }
@@ -39,5 +39,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    NavigationStack {
+        ProfileView()
+    }
 }

@@ -11,11 +11,11 @@ struct MockData {
     static let shared = MockData()
     private init() { }
     
-    func mockTitle(_ viewName: String) -> String {
+    func title(_ viewName: String) -> String {
         "Mock Title For \(viewName)"
     }
     
-    func mockSubtitle(_ viewName: String) -> String {
+    func subtitle(_ viewName: String) -> String {
         "This is the Mock Subtitle for \(viewName)"
     }
 }

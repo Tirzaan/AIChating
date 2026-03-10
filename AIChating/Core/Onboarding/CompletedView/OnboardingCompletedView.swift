@@ -32,18 +32,17 @@ struct OnboardingCompletedView: View {
     }
     
     private var finishButton: some View {
-        Button {
-            onFinishButtonPressed()
-        } label: {
-            ZStack {
-                if isCompletingProfileSetup {
-                    ProgressView()
-                        .tint(.white)
-                } else {
-                    Text("Finish")
-                }
+        ZStack {
+            if isCompletingProfileSetup {
+                ProgressView()
+                    .tint(.white)
+            } else {
+                Text("Finish")
             }
-            .callToActionButton()
+        }
+        .callToActionButton()
+        .asButton(.press) {
+            onFinishButtonPressed()
         }
         .disabled(isCompletingProfileSetup)
     }

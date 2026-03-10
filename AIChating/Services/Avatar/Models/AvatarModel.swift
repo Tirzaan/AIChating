@@ -116,7 +116,7 @@ struct AvatarDesriptionBuilder {
     }
     
     var description: String {
-        "A \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)"
+        return "\(characterOption.rawValue.article(uppercased: true)) \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)"
     }
 }
 

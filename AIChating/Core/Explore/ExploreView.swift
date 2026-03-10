@@ -10,25 +10,30 @@ import SwiftUI
 struct ExploreView: View {
     @State private var featuredAvatars = AvatarModel.mocks
     @State private var categories: [CharacterOption] = CharacterOption.allCases
+    @State private var popularAvatars = AvatarModel.mocks
 
     var body: some View {
         NavigationStack {
             List {
                 featuredSection
                 categorySection
+                popularSection
             }
             .navigationTitle("Explore")
         }
     }
     
     private var featuredSection: some View {
-        Section("Featured Avatars") {
+        Section("Featured") {
             CarouselCell(items: featuredAvatars) { avatar in
                 HeroCell(
                     title: avatar.name,
                     subtitle: avatar.description,
                     imageName: avatar.profileImageName
                 )
+                .asButton {
+                    
+                }
             }
             .removeListFormatting()
         }
@@ -43,6 +48,9 @@ struct ExploreView: View {
                             title: category.rawValue.capitalized,
                             imageName: Constants.image
                         )
+                        .asButton(.press) {
+                            
+                        }
                     }
                 }
             }
@@ -51,6 +59,22 @@ struct ExploreView: View {
             .scrollTargetLayout()
             .scrollTargetBehavior(.viewAligned)
             .removeListFormatting()
+        }
+    }
+    
+    private var popularSection: some View {
+        Section("Popular") {
+            ForEach(popularAvatars, id: \.self) { avatar in
+                ListCell(
+                    title: avatar.name,
+                    subtitle: avatar.description,
+                    imageName: avatar.profileImageName
+                )
+                .asButton(.press) {
+                    
+                }
+                .removeListFormatting()
+            }
         }
     }
 }

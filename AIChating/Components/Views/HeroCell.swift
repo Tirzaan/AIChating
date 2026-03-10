@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HeroCell: View {
-    var title: String? = MockData.shared.mockTitle("Hero Cell")
-    var subtitle: String? = MockData.shared.mockSubtitle("Hero Cell")
+    var title: String? = MockData.shared.title("Hero Cell")
+    var subtitle: String? = MockData.shared.subtitle("Hero Cell")
     var imageName: String? = Constants.image
     
     var body: some View {
